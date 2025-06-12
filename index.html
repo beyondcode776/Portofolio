@@ -139,30 +139,26 @@
     
     </section>
 
-
     <section class="contact" id="contact">
         <h2 class="heading">Contact<span> Me</span></h2>
-    
-        <form action="">
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name">
-                    <input type="email" placeholder="Email">
-                </div>
-                <div class="input-box">
-                    <input type="number" placeholder="Phone Number">
-                    <input type="text" placeholder="subject">
-                </div>
+
+        <div class="input-group">
+            <div class="input-box">
+                <input type="text" id="fullName" placeholder="Full Name">
+                <input type="email" id="email" placeholder="Email">
             </div>
-    
-            <div class="input-group-2">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                <input type="submit" value="Send Message" class="btn">
+            <div class="input-box">
+                <input type="number" id="phoneNumber" placeholder="Phone Number">
+                <input type="text" id="subject" placeholder="Subject">
             </div>
-        </form>
-    
+        </div>
+
+        <div class="input-group-2">
+            <textarea id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <button onclick="sendToWhatsApp()" class="btn">Send Message</button>
+        </div>
     </section>
-    
+
     <footer class="footer">
         <div class="social">
             <a href="https://www.linkedin.com/in/kishlay-kumar-19318a210?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class='bx  bxl-linkedin'></i> </a>
@@ -199,4 +195,34 @@
 
     <script src="script.js"></script>
 </body>
+<script>
+    function sendToWhatsApp() {
+        const fullName = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+        const phoneNumber = document.getElementById('phoneNumber').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        // Combine all data into a WhatsApp message
+        const whatsappMessage = *New Contact Request*%0A%0A +
+            *Name:* ${fullName}%0A +
+            *Email:* ${email}%0A +
+            *Phone:* ${phoneNumber}%0A +
+            *Subject:* ${subject}%0A +
+            *Message:* ${message};
+
+        // WhatsApp API link with pre-filled message
+        const whatsappUrl = https://wa.me/7379340224?text=${whatsappMessage};
+
+        // Open in new tab
+        window.open(whatsappUrl, '_blank');
+
+        // Or redirect in same window
+        // window.location.href = whatsappUrl;
+    }
+</script>
 </html>
+
+
+
+    
