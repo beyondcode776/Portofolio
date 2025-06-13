@@ -30,18 +30,23 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 };
 
-<script>
-function sendToWhatsApp() {
-    let message = document.getElementById("message").value.trim();
+// script.js
 
-    if (message === "") {
-        alert("Please enter a message before sending.");
-        return;
-    }
+// Wait for the page to load before adding event listener
+window.onload = function () {
+    document.getElementById("sendBtn").addEventListener("click", function () {
+        let message = document.getElementById("message").value.trim();
 
-    let phoneNumber = "918178940931"; // Replace with your full WhatsApp number, no '+' sign
-    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        if (message === "") {
+            alert("Please enter a message before sending.");
+            return;
+        }
 
-    window.open(url, "_blank");
-}
-</script>
+        let phoneNumber = "918178940931"; // ✅ Replace with your real number
+        let whatsappURL = `https://wa.me/${918178940931}?text=${encodeURIComponent()}`;
+
+        // ✅ Open WhatsApp
+        window.open(whatsappURL, "https://web.whatsapp.com/");
+    });
+};
+
