@@ -30,22 +30,18 @@ menuIcon.onclick = () => {
     navbar.classList.toggle('active');
 };
 
+<script>
 function sendToWhatsApp() {
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const phoneNumber = document.getElementById('phoneNumber').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+    let message = document.getElementById("message").value.trim();
 
-    // Combine all data into a WhatsApp message
-    const whatsappMessage = `*New Contact Request*%0A%0A*Name:* ${fullName}%0A*Email:* ${email}%0A*Phone:* ${phoneNumber}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+    if (message === "") {
+        alert("Please enter a message before sending.");
+        return;
+    }
 
-    // WhatsApp API link with pre-filled message
-    const whatsappUrl = `https://wa.me/8178940931?text=${whatsappMessage}`;
+    let phoneNumber = "918178940931"; // Replace with your full WhatsApp number, no '+' sign
+    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-    
-    window.open(whatsappUrl, '_blank');
-
-    // Or redirect in same window
-    // window.location.href = whatsappUrl;
+    window.open(url, "_blank");
 }
+</script>
