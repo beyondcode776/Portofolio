@@ -24,3 +24,28 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 };
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
+
+function sendToWhatsApp() {
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Combine all data into a WhatsApp message
+    const whatsappMessage = `*New Contact Request*%0A%0A*Name:* ${fullName}%0A*Email:* ${email}%0A*Phone:* ${phoneNumber}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
+
+    // WhatsApp API link with pre-filled message
+    const whatsappUrl = `https://wa.me/8178940931?text=${whatsappMessage}`;
+
+    
+    window.open(whatsappUrl, '_blank');
+
+    // Or redirect in same window
+    // window.location.href = whatsappUrl;
+}
