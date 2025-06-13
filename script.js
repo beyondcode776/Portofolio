@@ -1,4 +1,4 @@
-let menuIcon = document.querySelector('#menu-icon');
+agelet menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
@@ -43,7 +43,7 @@ window.onload = function () {
         }
 
         let phoneNumber = "918178940931"; // ✅ Replace with your real number
-        let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent()}`;
+        let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
         // ✅ Open WhatsApp
         window.open(whatsappURL, "https://web.whatsapp.com/");
