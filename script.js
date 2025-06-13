@@ -43,7 +43,7 @@ window.onload = function () {
         }
 
         let phoneNumber = "918178940931"; // ✅ Replace with your real number
-        let whatsappURL = `https://wa.me/${918178940931}?text=${encodeURIComponent()}`;
+        let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent()}`;
 
         // ✅ Open WhatsApp
         window.open(whatsappURL, "https://web.whatsapp.com/");
